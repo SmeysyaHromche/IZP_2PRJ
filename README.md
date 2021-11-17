@@ -52,3 +52,9 @@ String* mallocStr(char* value, int lenOfString){ //allocates memory, memory need
     }
     return str; //could be null
 }
+
+main(){
+
+
+    return 0;
+}
