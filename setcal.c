@@ -45,7 +45,7 @@ String setStr(char* value, int lenOfString){ //allocates memory, memory needs to
     for(int i = 0; i < lenOfString; i++){
         str.str[i] = value[i];
     }
-    return str; //could be null
+    return str;
 }
 
 Relation* reallocRel(Relation* rel, int numOfRels, int lenOfRel){ //allocates memory, memory needs to be freed!!!
