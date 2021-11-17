@@ -51,6 +51,23 @@ String* mallocStr(char* value, int lenOfString){ //allocates memory, memory need
     return str; //could be null
 }
 
+Relation* reallocRel(Relation* rel, int numOfRels, int lenOfRel){ //allocates memory, memory needs to be freed!!!
+    if(lenOfRel < 0 || numOfRels < 1) return NULL;
+
+    rel = (Relation*) realloc(rel, numOfRels*sizeof(Relation));
+    rel[numOfRels - 1].length = lenOfRel;
+    rel[numOfRels - 1].relation = calloc(rel[numOfRels - 1].length,
+                                    lenOfRel * sizeof(Element));
+    return rel; //could be null
+}
+
+Element createElem(String* str1, String* str2){
+    Element elem;
+    elem.str1 = *str1;
+    elem.str2 = *str2;
+    return elem;
+}
+
 main(){
 
 
