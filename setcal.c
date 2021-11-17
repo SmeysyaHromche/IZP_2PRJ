@@ -38,11 +38,10 @@ Set* reallocSet(Set* set, int numOfSets, int lenOfSet){ //allocates memory, memo
     return set; //could be null
 }
 
-String* mallocStr(char* value, int lenOfString){ //allocates memory, memory needs to be freed!!!
+String* setStr(String* str, char* value, int lenOfString){ //allocates memory, memory needs to be freed!!!
+    if(str == NULL) return NULL;
     if(lenOfString < 1) return NULL;
 
-    String* str;
-    str = (String*) malloc(sizeof(String));
     str->length = lenOfString;
     str->str = calloc(str->length, sizeof(char));
     for(int i = 0; i < lenOfString; i++){
